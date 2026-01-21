@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #e94560;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      opacity: 0.85;
+    }
+
+    /* Layout */
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      gap: 30px;
+    }
+
+    /* Vertical Buttons */
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      min-width: 200px;
+    }
+
+    nav button {
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      background: #533483;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      text-align: left;
+    }
+
+    nav button:hover {
+      background: #e94560;
+      transform: translateX(6px);
+    }
+
+    section {
+      flex: 1;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+      animation: slide 0.5s ease;
+    }
+
+    @keyframes slide {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+      border-left: 6px solid #e94560;
+    }
+
+    .card h2 {
+      margin-bottom: 20px;
+      color: #e94560;
+      font-size: 2rem;
+    }
+
+    .card p, li {
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      background: rgba(0,0,0,0.4);
+      font-size: 0.9rem;
+    }
+
+    footer span {
+      color: #e94560;
+      font-weight: 600;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+
+      nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      nav button {
+        flex: 1;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Monisha</h1>
+  <p>Software Developer | AI & ML Intern</p>
+</header>
+
+<div class="container">
+
+  <!-- Vertical Navigation -->
+  <nav>
+    <button onclick="showSection('profile')">Profile</button>
+    <button onclick="showSection('internship')">Internship</button>
+    <button onclick="showSection('certificate')">Certificates</button>
+    <button onclick="showSection('education')">Education</button>
+    <button onclick="showSection('contact')">Contact</button>
+  </nav>
+
+  <!-- Profile -->
+  <section id="profile" class="active">
+    <div class="card">
+      <h2>Profile</h2>
+      <p><strong>Name:</strong> Monisha</p>
+      <p><strong>Role:</strong> Software Developer Intern</p>
+      <p><strong>Skills:</strong> HTML, CSS, JavaScript, Python, AI & ML</p>
+      <p><strong>Objective:</strong> To create efficient and visually appealing applications.</p>
+    </div>
+  </section>
+
+  <!-- Internship -->
+  <section id="internship">
+    <div class="card">
+      <h2>Internship</h2>
+      <p><strong>Company:</strong> IMTDA Infotech Private Limited</p>
+      <p><strong>Domain:</strong> Software Development using AI & ML</p>
+      <ul>
+        <li>Worked on real-time development projects</li>
+        <li>Applied machine learning concepts</li>
+        <li>Enhanced problem-solving skills</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section id="certificate">
+    <div class="card">
+      <h2>Certificates</h2>
+      <ul>
+        <li>AI & ML Internship Certificate</li>
+        <li>Python Programming</li>
+        <li>Web Development</li>
+        <li>Data Science Fundamentals</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <div class="card">
+      <h2>Education</h2>
+      <p><strong>Degree:</strong> Bachelor of computer application</p>
+      <p><strong>Branch:</strong> Computer Science</p>
+      <p><strong>CGPA:</strong> 9.17</p>
+      <p><strong>Year:</strong> 2023 – 2026</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="card">
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> dmonish2026@email.com</p>
+      <p><strong>Phone:</strong> +91 9087007787</p>
+      <p><strong>GitHub:</strong> github.com/monishaguhan0528-cmd</p>
+      <p><strong>LinkedIn:</strong> linkedin.com/in/monisha</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p><span>IMTDA Infotech Private Limited</span></p>
+  <p>Software Development | AI & ML Solutions</p>
+  <p>© 2026 Monisha Portfolio</p>
+</footer>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
